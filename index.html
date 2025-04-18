@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Doctor Registration</h1>
+
+    <form action="/submit-doctor-registration" method="POST" enctype="multipart/form-data">
+        
+        <!-- Doctor Information Section -->
+        <div class="form-section">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full_name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+
+            <label for="specialty">Medical Specialty</label>
+            <select id="specialty" name="specialty" required>
+                <option value="cardiology">Cardiology</option>
+                <option value="dermatology">Dermatology</option>
+                <option value="pediatrics">Pediatrics</option>
+                <option value="neurology">Neurology</option>
+                <option value="orthopedics">Orthopedics</option>
+                <option value="general-practice">General Practice</option> <!-- Added General Practice -->
+                <!-- Add more specialties as needed -->
+            </select>
+        </div>
+
+        <!-- Professional Information Section -->
+        <div class="form-section">
+            <label for="clinic-name">Clinic Name</label>
+            <input type="text" id="clinic-name" name="clinic_name" required>
+
+            <label for="license-number">License Number</label>
+            <input type="text" id="license-number" name="license_number" required>
+
+            <label for="years-experience">Years of Experience</label>
+            <input type="number" id="years-experience" name="years_experience" required min="0">
+        </div>
+
+        <!-- Document Upload Section -->
+        <div class="form-section">
+            <label for="license-upload">Upload License Document</label>
+            <div class="upload-box">
+                <input type="file" id="license-upload" name="license_upload" accept=".jpg, .jpeg, .png, .pdf" required>
+                <p class="note">Only PDF, JPG, and PNG formats are accepted.</p>
+            </div>
+
+            <label for="certification-upload">Upload Certification (if applicable)</label>
+            <div class="upload-box">
+                <input type="file" id="certification-upload" name="certification_upload" accept=".jpg, .jpeg, .png, .pdf">
+                <p class="note">Only PDF, JPG, and PNG formats are accepted.</p>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Registration</button>
+    </form>
+</div>
+
+</body>
+</html>
